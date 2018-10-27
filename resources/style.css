@@ -4,7 +4,7 @@ html {
 body {
   background-color: black;
   color: white;
-  z-index: 1;
+  line-height: 1.4rem;
 }
 .sitecontainer {
   width: 960px;
@@ -33,21 +33,27 @@ body {
 
 .top {
   display: flex;
-}
-#image {
   background-image: url("../resources/banner.jpeg");
-  height: 25rem;
-  width: 2000px;
-  z-index: 2;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 25em;
+}
+
+.container {
+  display: block;
+  max-width: 960px;
+
 }
 
 .box {
   display: block;
   background-color: black;
-  position: absolute;
+  position: relative;
   width: 25rem;
   height: 10rem;
   margin-top: 9rem;
+  margin-left: 9rem;
   align-items: center;
 }
 
@@ -66,7 +72,7 @@ body {
   font-size: 2rem;
   font-weight: bold;
   padding: 0.25rem;
-  line-height: 1.25;
+  line-height: 2.4rem;
 }
 
       /* Navigation information*/
@@ -86,7 +92,9 @@ body {
   font-family: Helvetica;
 
 }
-
+.menu {
+  display: none;
+}
       /* Main information*/
 
 .main {
@@ -95,19 +103,20 @@ body {
 }
 
 .item {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   border: 4px solid black;
   margin: 3rem;
   width: 30%;
+  justify-content: center;
 }
 
 .item img {
   height: 9rem;
-  width: 9rem;
+  max-width: 8em;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .item span {
@@ -117,8 +126,10 @@ body {
 
 .main2 {
   display: flex;
+  justify-content: space-between;
   background-color: white;
-  height: 10rem;
+  height: 8rem;
+
 }
 
 .infobox {
@@ -128,28 +139,20 @@ body {
   width: 35%;
   height: 2.5rem;
   margin-left: 3rem;
+  margin-right: 3rem;
+  align-items: center;
 }
 
-.location {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.hours {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.infoa {
+.infoa span {
   display: flex;
   margin-left: 2rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 0.4rem;
   text-align: left;
 }
-.infob {
+
+.infob span {
   display: flex;
-  padding: 3rem;
   color: black;
   text-align: left;
 }
@@ -161,4 +164,33 @@ body {
   align-items: center;
   text-align: left;
   margin-top: 2.5rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  .navigation span {
+    display: none;
+  }
+  .menucontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu {
+    display:inline-flex;
+    padding-bottom: 0.75em;
+  }
+  .item {
+    width: 47%;
+    overflow: hidden;
+  }
+  .item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  #third {
+    display: none;
+  }
+
+
 }
